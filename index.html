@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Daily Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M4 17a3 3 0 0 1 3-3h12"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+<symbol id="i-journal" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+<symbol id="i-tasks" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 5v2M4.5 9l1.4 1.4M19.5 9l-1.4 1.4M2 17h2M20 17h2M3 21h18"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14z"/><path d="M5 19c3-4 6-7 9-9"/></symbol>
+<symbol id="i-face" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/></symbol>
+<symbol id="m1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M7.8 14c1 2.2 2.4 3 4.2 3s3.2-.8 4.2-3z"/></symbol>
+<symbol id="m2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8 14.5c1 1.4 2.3 2 4 2s3-.6 4-2"/></symbol>
+<symbol id="m3" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 15.5h7"/></symbol>
+<symbol id="m4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 16.5c1-1.3 2.2-1.9 3.5-1.9s2.5.6 3.5 1.9"/></symbol>
+<symbol id="m5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 9l2 1M16 9l-2 1"/><path d="M8 17c1-2.2 2.4-3 4-3s3 .8 4 3"/></symbol>
+</defs></svg>
+
+<div class="panel">
+<header class="top"><div class="logo"><svg class="ic"><use href="#i-heart"/></svg></div><div><div class="top-title">My Daily Planner</div><div class="top-sub">gentle plans for soft days</div></div></header>
+<div class="body">
+<nav id="sidebar" class="side">
+<button class="nav-button" title="Home" onclick="showPage('homePage', this)"><svg class="ic"><use href="#i-home"/></svg><span class="nav-label">Home</span></button>
+<button class="nav-button" title="Study" onclick="showPage('studyPage', this)"><svg class="ic"><use href="#i-book"/></svg><span class="nav-label">Study</span></button>
+<button class="nav-button" title="Progress" onclick="showPage('progressPage', this)"><svg class="ic"><use href="#i-chart"/></svg><span class="nav-label">Progress</span></button>
+<button class="nav-button" title="Calendar" onclick="showPage('calendarPage', this)"><svg class="ic"><use href="#i-cal"/></svg><span class="nav-label">Calendar</span></button>
+<button class="nav-button" title="Journal" onclick="showPage('journalPage', this)"><svg class="ic"><use href="#i-journal"/></svg><span class="nav-label">Journal</span></button>
+<button class="nav-button" title="Goals" onclick="showPage('goalsPage', this)"><svg class="ic"><use href="#i-target"/></svg><span class="nav-label">Goals</span></button>
+<button class="nav-button" title="Tasks" onclick="showPage('tasksPage', this)"><svg class="ic"><use href="#i-tasks"/></svg><span class="nav-label">Tasks</span></button>
+</nav>
+<main class="content">
+
+<div id="homePage" class="page"><div class="home-grid">
+<div class="card date-card"><p id="gregorianDate"></p><p id="persianDate"></p></div>
+<div class="card home-section mood-card"><div class="card-head"><span class="ico r"><svg class="ic"><use href="#i-face"/></svg></span><h2>How are you feeling today?</h2></div><div class="mood-buttons"><button onclick="setMood('Great')" title="Great"><svg class="ic"><use href="#m1"/></svg></button><button onclick="setMood('Good')" title="Good"><svg class="ic"><use href="#m2"/></svg></button><button onclick="setMood('Okay')" title="Okay"><svg class="ic"><use href="#m3"/></svg></button><button onclick="setMood('Not great')" title="Not great"><svg class="ic"><use href="#m4"/></svg></button><button onclick="setMood('Bad')" title="Bad"><svg class="ic"><use href="#m5"/></svg></button></div><p id="moodResult"></p></div>
+<div class="card home-section tasks-card"><div class="card-head"><span class="ico g"><svg class="ic"><use href="#i-tasks"/></svg></span><h2>Today's Tasks</h2></div><div id="taskList"></div><div class="task-input"><input id="newTask" type="text" placeholder="Add a new task..."><button onclick="addTask()">+ Add Task</button></div></div>
+<div class="card home-section habits-card"><div class="card-head"><span class="ico"><svg class="ic"><use href="#i-drop"/></svg></span><h2>Daily Habits</h2></div><p id="water">Water: 0 / 8 glasses</p><div class="habit-buttons"><button onclick="addGlass()">+ Add glass</button><button onclick="removeGlass()">− Remove glass</button></div></div>
+<div class="card home-section gratitude-card"><div class="card-head"><span class="ico r"><svg class="ic"><use href="#i-leaf"/></svg></span><h2>Today's Gratitude</h2></div><textarea id="gratitude" placeholder="Today I'm grateful for..."></textarea><button onclick="addGratitude()">Add Gratitude</button><div id="gratitudeList"></div></div>
+<div class="card home-section reminders-card"><div class="card-head"><span class="ico l"><svg class="ic"><use href="#i-bell"/></svg></span><h2>Reminders</h2></div><div class="reminder-input"><input id="reminderText" type="text" placeholder="What do you need to remember?"><input id="reminderTime" type="time"></div><button onclick="addReminder()">Add Reminder</button><div id="reminderList"></div></div>
+</div></div>
+
+<div id="studyPage" class="page" style="display: none;"><div class="card study-dashboard"><h1>Study Planner</h1><p class="study-intro">Plan your study gently, one step at a time.</p>
+<div class="weekly-study"><div class="study-week-selector"><button type="button" id="previousStudyWeek">← Previous</button><h2 id="studyWeekTitle">This Week</h2><button type="button" id="nextStudyWeek">Next →</button></div>
+<p class="study-week-intro">Add what you would like to study each day.</p>
+<div class="study-day"><div class="study-day-header"><h3>Saturday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Sunday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Monday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Tuesday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Wednesday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Thursday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+<div class="study-day"><div class="study-day-header"><h3>Friday</h3><span class="study-day-date"></span></div><div class="study-slots"><div class="study-slot"><input type="text" placeholder="Subject"><input type="text" placeholder="Topic"><input type="number" min="0" placeholder="Minutes"><input type="number" min="0" placeholder="Tests"><input type="number" min="0" placeholder="Actual minutes" class="actual-minutes"><button type="button" class="remove-study-slot">Remove</button></div></div><button type="button" class="add-study-slot">+ Add another</button></div>
+</div>
+<div class="study-log"><h2>Study Log</h2><p class="study-log-intro">Record what you actually studied.</p><div id="studyLogEntries"></div><button type="button" class="add-study-log-button" id="addStudyLogButton">+ Add study session</button></div>
+<div class="weekly-study-overview"><h2>Weekly Study Overview</h2><p class="study-overview-intro">A calm view of everything you plan to study this week.</p><div id="weeklyStudyOverview"></div></div>
+<div class="study-week-summary"><h2>This Week</h2><p>Planned study time <strong id="plannedStudyTime">0 minutes</strong></p><p>Actual study time <strong id="actualStudyTime">0 minutes</strong></p><p>Planned tests <strong id="plannedStudyTests">0 tests</strong></p><p>Actual tests <strong id="actualStudyTests">0 tests</strong></p><p>Planned sessions <strong id="plannedStudySessions">0 study sessions</strong></p><p>Completed <strong id="completedStudySessions">0 study sessions</strong></p></div>
+</div></div>
+
+<div id="progressPage" class="page" style="display: none;"><h1 style="margin-bottom:16px">My Progress</h1>
+<div class="card"><div class="card-head"><span class="ico g"><svg class="ic"><use href="#i-chart"/></svg></span><h2>This Week</h2></div><p>Study Sessions <span id="weekSessions">0</span></p><p>Study Time <span><span id="weekMinutes">0</span> minutes</span></p><p>Total Tests <span id="weekTests">0</span></p><p>Correct <span id="weekCorrect">0</span></p><p>Wrong <span id="weekWrong">0</span></p><p>Unanswered <span id="weekUnanswered">0</span></p><p>Percentage <span><span id="weekPercentage">0</span>%</span></p></div>
+<div class="card"><div class="card-head"><span class="ico"><svg class="ic"><use href="#i-chart"/></svg></span><h2>This Week vs Last Week</h2></div><p>Study Time <span id="studyComparison">—</span></p><p>Tests <span id="testComparison">—</span></p><p>Percentage <span id="percentageComparison">—</span></p></div>
+<div class="card"><div class="card-head"><span class="ico l"><svg class="ic"><use href="#i-cal"/></svg></span><h2>Previous Weeks</h2></div><div id="previousWeeks"><p>No previous weeks yet.</p></div></div>
+<div class="card"><div class="card-head"><span class="ico r"><svg class="ic"><use href="#i-target"/></svg></span><h2>All Time</h2></div><p>Total Sessions <span id="allSessions">0</span></p><p>Total Study Time <span><span id="allMinutes">0</span> minutes</span></p><p>Total Tests <span id="allTests">0</span></p></div>
+<div class="card"><div class="card-head"><span class="ico"><svg class="ic"><use href="#i-chart"/></svg></span><h2>Weekly Study Progress</h2></div><div id="studyChart"></div></div></div>
+
+<div id="calendarPage" class="page" style="display: none;"><div class="calendar-section"><h1>Calendar</h1><p class="calendar-intro">See your tasks and important dates at a glance.</p>
+<div class="card"><div class="calendar-header"><button type="button" id="previousMonthButton" class="calendar-nav-button">◀</button><h2 id="calendarMonthTitle">Month Year</h2><button type="button" id="nextMonthButton" class="calendar-nav-button">▶</button></div>
+<div id="calendarGrid" class="calendar-grid"></div>
+<button type="button" id="todayCalendarButton" class="today-calendar-button">Today</button></div>
+<div id="selectedDateTasks" class="selected-date-tasks"></div></div></div>
+
+<div id="journalPage" class="page" style="display: none;"><div class="card journal-card"><h1>My Journal</h1><p class="journal-intro">Write down your thoughts, feelings, or anything you want to remember.</p><textarea id="journalText" placeholder="Dear diary..."></textarea><button type="button" onclick="saveJournal()" class="journal-save-button">Save Entry</button><div id="journalEntries"></div></div></div>
+
+<div id="goalsPage" class="page" style="display: none;"><div class="goals-section"><h1>Goals</h1><p class="goals-intro">Keep track of the things you want to achieve.</p><div id="goalsList"></div><button type="button" id="addGoalButton" class="add-goal-button">+ Add Goal</button></div></div>
+
+<div id="tasksPage" class="page" style="display: none;"><div class="tasks-section"><h1>Tasks</h1><p class="tasks-intro">Keep track of the little things you want to get done.</p>
+<div class="task-summary"><div class="task-summary-item"><span class="task-summary-number" id="totalTasks">0</span><span class="task-summary-label">Total</span></div><div class="task-summary-item"><span class="task-summary-number" id="completedTasks">0</span><span class="task-summary-label">Completed</span></div><div class="task-summary-item"><span class="task-summary-number" id="remainingTasks">0</span><span class="task-summary-label">Remaining</span></div></div>
+<div class="task-filters"><input type="text" id="taskSearchInput" placeholder="Search tasks..."/>
+<select id="taskCategoryFilter"><option value="all">All categories</option><option value="Study">Study</option><option value="Work">Work</option><option value="Personal">Personal</option><option value="Health">Health</option><option value="Other">Other</option></select>
+<select id="taskPriorityFilter"><option value="all">All priorities</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select>
+<select id="taskStatusFilter"><option value="all">All tasks</option><option value="remaining">Remaining</option><option value="completed">Completed</option></select>
+<select id="taskSortFilter"><option value="newest">Newest first</option><option value="date">Date: earliest first</option><option value="priority">Priority: high first</option><option value="incomplete">Incomplete first</option><option value="alphabetical">Alphabetical</option></select></div>
+<div id="tasksList"></div><button type="button" id="addTaskButton" class="add-task-button">+ Add Task</button></div></div>
+
+</main></div>
+<div class="footnote">little steps, big blooms</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7"></script>
+<script src="config.js"></script>
+<script src="cloud.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Vazirmatn:wght@400;500;600;700&display=swap");
+
+:root{--bg:#fdf0f2;--panel:#fffbfb;--card:#fffdfd;--line:#f4e0e5;--ink:#473840;--brown:#a65a70;--tan:#dba6b3;--olive:#c4738a;--olive2:#fbe3e7;--peach:#fde9df;--lav:#ece2f3;--rose:#f9dde2;--sage:#dcebde;--mute:#a28f97;--sh:0 14px 34px rgba(196,115,138,.12);--serif:"Playfair Display","Vazirmatn",Georgia,serif;--hand:"Dancing Script","Vazirmatn",cursive;--sans:"Nunito","Vazirmatn","Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:400 15px/1.6 var(--sans);padding:20px 14px 40px;min-height:100vh;
+background:radial-gradient(circle at 10% 0,#fff 0,transparent 45%),radial-gradient(circle at 100% 100%,#f0e4f6 0,transparent 40%),linear-gradient(160deg,#fff3f5,#fbe3e8)}
+h1,h2,h3,p{margin:0}
+h1{font:600 32px/1.2 var(--serif)}
+h2{font:600 20px/1.3 var(--serif)}
+h3{font:600 18px/1.35 var(--serif)}
+p{margin-top:6px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.panel{max-width:1040px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh);padding:26px}
+.top{display:flex;align-items:center;gap:16px;padding-bottom:20px;flex-wrap:wrap}
+.top .ic{width:42px;height:42px;color:var(--brown);stroke-width:1.3}
+.top-title{font:700 28px/1.1 var(--serif)}
+.top-sub{font-size:11px;letter-spacing:3px;color:var(--mute);margin-top:4px}
+.note{font:600 22px/1.1 var(--hand);color:var(--brown);margin-left:auto;transform:rotate(-3deg);max-width:210px}
+.body{display:grid;grid-template-columns:190px 1fr;gap:24px}
+.side{display:flex;flex-direction:column;gap:4px}
+.nav-button{display:flex;align-items:center;gap:12px;width:100%;background:transparent;color:#5d5044;border:0;border-radius:14px;padding:11px 14px;font:500 15px var(--sans);text-align:left;cursor:pointer;transition:.2s}
+.nav-button:hover{background:#fdeef1}
+.nav-button.active{background:#fff;color:var(--ink);font-weight:600}
+.side-note{font:600 21px/1.15 var(--hand);color:var(--brown);margin-top:26px;padding-left:10px;transform:rotate(-3deg)}
+.page{animation:in .35s ease both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.page>h1,.study-dashboard>h1,.calendar-section>h1,.goals-section>h1,.tasks-section>h1,.journal-card>h1{margin-bottom:4px}
+.study-intro,.study-week-intro,.study-log-intro,.study-overview-intro,.calendar-intro,.journal-intro,.goals-intro,.tasks-intro{color:var(--mute);font-size:14px;margin:0 0 18px}
+
+/* cards */
+.card,.study-dashboard,.selected-date-tasks,.goal-card,.task-card,.goal-form,.task-form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 4px 16px rgba(196,115,138,.06)}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.date-card{grid-column:1/-1;display:flex;flex-direction:column;justify-content:center}
+.date-card p{margin:0}
+#gregorianDate{font:600 26px/1.25 var(--serif)}
+#persianDate{font:italic 600 20px var(--serif);color:var(--brown);margin-top:4px}
+.card-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.ico{width:34px;height:34px;border-radius:10px;background:var(--peach);color:var(--brown);display:grid;place-items:center}
+.ico .ic{width:18px;height:18px}
+.ico.g{background:var(--sage);color:#5f8a68}
+.ico.l{background:var(--lav);color:#7a6a96}
+.ico.r{background:var(--rose);color:#a5705f}
+
+/* controls */
+button{font:600 14px var(--sans);cursor:pointer;border:0;border-radius:999px;padding:10px 20px;background:var(--olive);color:#fff;transition:.2s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;width:100%;outline:0;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--tan);box-shadow:0 0 0 3px rgba(217,138,160,.22)}
+textarea{min-height:100px;resize:vertical}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:20px;height:20px;padding:0;border:1.6px solid var(--tan);border-radius:7px;background:#fff;flex:none;cursor:pointer}
+input[type=checkbox]:checked{background:var(--olive) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/70% no-repeat;border-color:var(--olive)}
+.task-input,.reminder-input{display:flex;gap:8px;margin:12px 0}
+.task-input button{white-space:nowrap}
+.mood-buttons{display:flex;justify-content:space-between;gap:6px}
+.mood-buttons button{width:46px;height:46px;padding:0;border-radius:50%;background:var(--peach);color:var(--brown);display:grid;place-items:center}
+.mood-buttons button:hover{background:var(--olive2);color:var(--olive);transform:scale(1.08)}
+.mood-buttons .ic{width:26px;height:26px}
+#moodResult{color:var(--brown);font:italic 600 16px var(--serif);margin-top:12px;min-height:24px}
+.habit-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.habit-buttons button,.study-week-selector button,.calendar-nav-button{background:var(--peach);color:var(--brown)}
+#water{font:600 16px var(--serif)}
+#gratitude+button,.reminder-input+button{margin-top:10px}
+
+/* rows */
+.home-task-item,.gratitude-item,.reminder-item{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px solid var(--line)}
+.home-task-item::before,.gratitude-item::before,.reminder-item::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--tan);flex:none}
+.reminder-item::before{background:#b59ad0}
+.gratitude-item::before{background:#d9a79a}
+.home-task-item:has(input)::before{display:none}
+.gratitude-text,.reminder-info{flex:1;min-width:0}
+.reminder-time,.study-day-date{font-size:12px;font-weight:600;background:var(--peach);color:var(--brown);border-radius:999px;padding:2px 12px}
+.gratitude-delete,.reminder-delete,.home-task-delete,.journal-delete,.delete-study-log-button,.delete-task-button,.delete-goal-button,.remove-study-slot{background:transparent;color:var(--mute);border:1px solid var(--line);padding:5px 13px;font-size:13px;font-weight:500}
+.gratitude-delete:hover,.reminder-delete:hover,.home-task-delete:hover,.journal-delete:hover,.delete-study-log-button:hover,.delete-task-button:hover,.delete-goal-button:hover,.remove-study-slot:hover{background:var(--rose);color:#8d5648;filter:none}
+
+/* study */
+.study-week-selector{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.study-week-selector h2{text-align:center}
+.study-day{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.study-day-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.study-slot{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:8px;margin-bottom:8px;align-items:center}
+.study-completion{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute)}
+.add-study-slot,.add-study-log-button,.add-goal-button,.add-task-button,.add-milestone-button,.today-calendar-button{background:#fff3f5;color:var(--brown);border:1px dashed var(--tan)}
+.add-study-log-button,.add-goal-button,.add-task-button{width:100%;margin-top:10px}
+.reschedule-study-button,.reschedule-task-button,.edit-task-button,.edit-goal-button{background:var(--peach);color:var(--brown);padding:6px 14px;font-size:13px}
+.study-log,.weekly-study-overview,.study-week-summary{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.study-log-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;background:#fff3f5;padding:14px;border-radius:16px;margin:10px 0}
+.study-log-card{border-bottom:1px solid var(--line);padding:12px 2px}
+.overview-day{margin-top:14px;font:600 17px var(--serif)}
+.overview-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:6px}
+.overview-card{background:#fff6f7;border:1px solid var(--line);border-radius:14px;padding:12px}
+.overview-status{display:inline-block;font-size:12px;font-weight:600;background:var(--sage);color:#5f8a68;border-radius:999px;padding:1px 12px;margin-top:4px}
+.overview-empty{color:var(--mute);font-size:14px}
+.study-week-summary p{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 2px;margin:0}
+.study-week-summary strong{color:var(--brown)}
+
+/* progress */
+#progressPage .card p{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:8px 2px;margin:0}
+#progressPage .card p:last-child{border:0}
+#progressPage .card span{font-weight:600;color:var(--brown)}
+#studyChart p{font-size:14px;color:var(--mute);margin:0 0 4px}
+#studyChart div div{background:linear-gradient(90deg,#e59aae,#f0b9c6)!important;border-radius:999px!important}
+
+/* calendar */
+.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.calendar-header h2{font:700 22px var(--serif)}
+.calendar-nav-button{width:38px;height:38px;padding:0;font-size:13px}
+.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.calendar-weekdays div,.calendar-day-name{text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);font-weight:600;padding:6px 0}
+.calendar-day{aspect-ratio:1;max-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;transition:.2s;font-size:14px;gap:2px}
+.calendar-day:hover{background:var(--peach)}
+.calendar-day.empty{visibility:hidden}
+.calendar-day.today{background:var(--olive);color:#fff;font-weight:700}
+.today-calendar-button{margin:14px 0}
+.calendar-task-indicator,.calendar-study-indicator,.calendar-goal-indicator{display:inline-block;width:5px;height:5px;border-radius:50%;font-size:0;margin:0 1px}
+.calendar-task-indicator{background:var(--tan)}
+.calendar-study-indicator{background:#7fae8b}
+.calendar-goal-indicator{background:#b59ad0}
+.calendar-selected-header{margin-bottom:10px}
+.calendar-selected-header p{font:italic 600 17px var(--serif);color:var(--brown)}
+.calendar-task-item,.calendar-study-item,.calendar-goal-item{padding:10px 2px;border-bottom:1px solid var(--line)}
+.calendar-add-task-button{margin-top:10px}
+
+/* journal */
+.journal-card textarea{background:repeating-linear-gradient(#fff,#fff 31px,var(--line) 32px);line-height:32px;min-height:180px}
+.journal-card button.journal-save-button{margin-top:10px}
+.journal-entry{border-bottom:1px solid var(--line);padding:16px 2px}
+.journal-date{font:600 21px var(--hand);color:var(--brown)}
+.journal-text{white-space:pre-wrap;margin:6px 0 10px}
+
+/* goals & tasks */
+.goal-form,.task-form{display:grid;gap:10px;background:#fff6f7}
+.milestone-section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.milestone-title{font-weight:600;margin-bottom:6px}
+.milestone-item{display:flex;align-items:center;gap:10px;padding:8px 2px;border-bottom:1px solid var(--line)}
+.goal-card,.task-card{margin-top:12px;transition:.2s}
+.goal-card:hover,.task-card:hover{transform:translateY(-2px)}
+.goal-card.completed,.task-card.completed{background:#eef6ef}
+.goal-complete-row,.task-complete-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.task-progress-label{font-size:13px;color:var(--mute);margin-top:10px}
+.task-progress-bar{height:8px;background:#f9e6ea;border-radius:8px;overflow:hidden;margin-top:4px}
+.task-progress-fill{height:100%;background:linear-gradient(90deg,#d98aa0,#f0b9c6);border-radius:8px;transition:width .4s}
+.task-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.task-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.task-summary-item{border-radius:18px;padding:14px;text-align:center;border:1px solid var(--line);background:var(--card)}
+.task-summary-item:nth-child(1){background:var(--peach)}
+.task-summary-item:nth-child(2){background:var(--sage)}
+.task-summary-item:nth-child(3){background:var(--lav)}
+.task-summary-number{display:block;font:700 32px var(--serif)}
+.task-summary-label{font-size:13px;color:var(--mute)}
+.task-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:10px}
+.footnote{text-align:center;font:600 22px var(--hand);color:var(--brown);margin-top:18px}
+
+/* ---- layout: centered header + pill nav ---- */
+.panel{max-width:980px;border-radius:32px;padding:28px}
+.top{flex-direction:column;text-align:center;gap:10px;padding-bottom:18px}
+.logo{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#f9d3da,#e9d7f2);display:grid;place-items:center;color:#c4738a;box-shadow:0 6px 16px rgba(196,115,138,.2)}
+.top .logo .ic{width:28px;height:28px;stroke-width:1.5}
+.top-title{font:600 34px/1.15 var(--serif)}
+.top-sub{font:500 13px var(--sans);letter-spacing:1.5px;color:var(--mute);margin-top:6px}
+.body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start}
+.content{min-width:0}
+.side{position:sticky;top:20px;flex-direction:column;gap:6px;background:linear-gradient(180deg,#fdeef1,#f6ecf8);border-radius:26px;padding:12px;margin:0}
+.nav-button{width:100%;border-radius:16px;padding:12px 16px;font-size:15px;gap:12px}
+.nav-button.active{background:#fff;box-shadow:0 3px 10px rgba(196,115,138,.2);color:var(--brown)}
+.card,.study-dashboard,.selected-date-tasks,.goal-card,.task-card,.goal-form,.task-form{border-radius:26px;box-shadow:0 8px 24px rgba(196,115,138,.08);background:linear-gradient(180deg,var(--t,#fff) 0,#fff 75%)}
+.mood-card{--t:#fdeef1}
+.tasks-card{--t:#eaf4ec}
+.habits-card{--t:#f1eaf7}
+.gratitude-card{--t:#fdeef1}
+.reminders-card{--t:#fdf0e6}
+.date-card{--t:#fdeef1}
+.ico{border-radius:50%;width:38px;height:38px}
+.home-task-item,.gratitude-item,.reminder-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin-top:8px}
+.home-task-item::before,.gratitude-item::before,.reminder-item::before{display:none}
+.study-log-card,.journal-entry,.calendar-task-item,.calendar-study-item,.calendar-goal-item,.milestone-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-top:8px}
+.footnote{font:600 24px var(--hand);color:var(--brown);margin-top:20px;text-align:center}
+.reminders-card{grid-column:1/-1}
+
+@media(max-width:760px){
+body{padding:10px 8px 96px}
+.panel{padding:16px;border-radius:24px}
+.body{display:block}
+.side{position:fixed;top:auto;left:10px;right:10px;bottom:10px;margin:0;width:auto;flex-direction:row;flex-wrap:nowrap;justify-content:space-around;border-radius:999px;padding:6px;background:rgba(255,251,251,.96);backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:var(--sh);z-index:10}
+.nav-button{width:auto;border-radius:999px;padding:10px}
+.nav-label{display:none}
+.home-grid{grid-template-columns:1fr}
+.task-input,.reminder-input{flex-direction:column}
+.study-slot{grid-template-columns:1fr 1fr}
+.calendar-day{font-size:13px}
+.top-title{font-size:32px}
+}
+
+/* =====================================================================
+   NEW: profiles, language (RTL), money, cycle, settings
+   PASTE THIS AT THE VERY END OF THE CSS PANE.
+   ===================================================================== */
+
+/* sign-in screen */
+.pl-overlay{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;overflow:auto;background:linear-gradient(160deg,#fff3f5,#fbe3e8 60%,#ece2f3)}
+.pl-card{width:100%;max-width:430px;background:var(--panel);border:1px solid var(--line);border-radius:32px;box-shadow:var(--sh);padding:28px;display:grid;gap:12px;text-align:center}
+.pl-logo{width:58px;height:58px;margin:0 auto;border-radius:50%;background:linear-gradient(135deg,#f9d3da,#e9d7f2);display:grid;place-items:center;color:#c4738a;box-shadow:0 6px 16px rgba(196,115,138,.2)}
+.pl-logo .ic{width:28px;height:28px}
+.pl-sub{color:var(--mute);margin:0}
+.pl-label{font-weight:700;color:var(--brown);margin:4px 0 0;text-align:start}
+.pl-hint{font-size:13px;color:var(--mute);margin:0}
+.pl-error{color:#b04a5f;font-size:13px;min-height:18px;margin:0}
+.pl-card input{text-align:start}
+
+/* chips + rows */
+.pl-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pl-row.pl-start{justify-content:flex-start}
+.pl-chip{background:var(--peach);color:var(--brown);padding:8px 16px;font-size:13px}
+.pl-chip.on{background:var(--olive);color:#fff}
+.pl-ghost{background:#fff3f5;color:var(--brown);border:1px dashed var(--tan)}
+.pl-danger{background:#fff;color:#b04a5f;border:1px solid #f1c9d1}
+
+/* top bar with greeting */
+.pl-userbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.pl-hello{font:600 17px var(--serif);color:var(--brown)}
+.pl-spacer{flex:1}
+
+/* forms */
+.pl-form{display:grid;gap:10px}
+.pl-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.pl-field{display:grid;gap:4px}
+.pl-field label{font-size:13px;font-weight:600;color:var(--mute)}
+.pl-check{display:flex;align-items:center;gap:10px;font-weight:600}
+.pl-msg{color:var(--brown);min-height:20px;margin:0}
+
+/* money + cycle */
+.pl-sum .task-summary-number{font-size:20px;line-height:1.3;word-break:break-word}
+.pl-in{color:#5f8a68;font-weight:700}
+.pl-out{color:#b04a5f;font-weight:700}
+.pl-row2{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pl-cat{margin-top:12px}
+.pl-budget{margin-top:14px}
+.pl-big{font:600 26px/1.3 var(--serif);color:var(--brown)}
+.pl-muted{color:var(--mute);font-size:14px}
+.pl-hero{text-align:center}
+.pl-soft{background:#fff6f7}
+
+/* Persian / right-to-left */
+html[dir="rtl"]{--serif:"Vazirmatn",Georgia,serif;--hand:"Vazirmatn",cursive;--sans:"Vazirmatn","Segoe UI",Arial,sans-serif}
+html[dir="rtl"] *{letter-spacing:0!important}
+html[dir="rtl"] #persianDate,html[dir="rtl"] #moodResult,html[dir="rtl"] .calendar-selected-header p{font-style:normal}
+html[dir="rtl"] .nav-button{text-align:right}
+html[dir="rtl"] .footnote,html[dir="rtl"] .journal-date{font-weight:600}
+
+/* more icons on small screens: let the bottom bar scroll */
+@media(max-width:760px){
+.side{overflow-x:auto;justify-content:flex-start}
+.nav-button{flex:none}
+}
